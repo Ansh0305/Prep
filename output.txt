@@ -1,0 +1,1 @@
+Smallest element is: 4

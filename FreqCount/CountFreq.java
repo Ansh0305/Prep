@@ -1,4 +1,4 @@
-// 4. Count the Frequency of a element in an array
+// 4. Count the Frequency of each element in an array
 // Brute Force
 
 import java.util.Scanner;

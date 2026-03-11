@@ -1,3 +1,5 @@
+// 5. Rearrange array in increasing-decreasing order
+
 import java.util.Scanner;
 
 public class AscendDecend {
@@ -45,3 +47,6 @@ public class AscendDecend {
         sc.close();
     }
 }
+
+// TC: O(nlogn)
+// SC: O(1) 

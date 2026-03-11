@@ -74,3 +74,5 @@ public class RevArray{
         sc.close();
     }
 }
+// TC: O(n)
+// SC: O(1)

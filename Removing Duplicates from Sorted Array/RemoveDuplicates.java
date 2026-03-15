@@ -1,6 +1,9 @@
-// Remove Duplicates in-place from Sorted Array
 
-// Brute Force approach
+import java.util.Scanner;
+
+// Remove Duplicates in-place from Sorted Array
+/* 
+// Brute Force approach(HashSet)
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -37,3 +40,52 @@ public class RemoveDuplicates {
         }
     }
 }
+
+// TC: O(n)
+// SC: O(n)
+
+*/
+
+// Optimal approach(Two Pointer)
+
+public class RemoveDuplicates{
+    public static void main(String[] args){
+        // Input
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Logic
+        if (arr.length == 0) {
+            System.out.println("Empty");
+        }
+
+        // Pointer for first unique element
+        int i = 0;
+        // Start from second element
+        for (int j = 1; j < n; j++) {
+            if (arr[j] != arr[i]) {
+                // Move unique position forward
+                i++;
+                // Place new unique element
+                arr[i] = arr[j];
+            }
+        }
+        // i is the las index of unique element, count = i + 1
+        int count = i + 1;
+        // Output
+        System.out.println("Unique Count: " + count);
+        System.out.print("Array after removing duplicats: ");
+        
+        for (int k = 0; k < count; k++) {
+            System.out.print(arr[k] + " ");
+        }
+    }
+}
+
+TC: O(n)
+SC: O(1)

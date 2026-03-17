@@ -1,6 +1,6 @@
 // Find all Symmetric Pairs in the array of pairs
 
-/* Brute Force */
+/* Brute Force 
 
 import java.util.Scanner;
 
@@ -32,3 +32,42 @@ public class SymmetricPairs {
 
 // TC: O(n^2)
 // TC: O(1)
+
+*/
+
+// Optimal - HashMap
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class SymmetricPairs{
+    public static void main(String[] args){
+        // Input
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] arr = new int[n][2];
+
+        for (int i = 0; i < n; i++) {
+            arr[i][0] = sc.nextInt();
+            arr[i][1] = sc.nextInt();
+        }
+
+        // Output + Logic
+        HashMap<Integer, Integer> map = new HashMap<>();
+        System.out.print("Symmetric pairs are: ");
+        
+        for(int i = 0; i < n; i++){
+            int first = arr[i][0];
+            int second = arr[i][1];
+
+            if(map.containsKey(second) && map.get(second) == first){
+                System.out.println("(" + first + "," + second + ")");
+            } else {
+                map.put(first, second);
+            }
+        }
+    }
+}
+
+// TC: O(n)
+// TC: O(n)
